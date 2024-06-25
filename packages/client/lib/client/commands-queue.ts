@@ -87,6 +87,8 @@ export default class RedisCommandsQueue {
                 }
             }
             
+            // eslint-disable-next-line no-undef
+            console.log('reply: ', reply);
             const { resolve, reject } = this.#waitingForReply.shift()!;
             if (reply instanceof ErrorReply) {
                 reject(reply);
